@@ -6,14 +6,15 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
 import 'package:myhospitalapp/homePage.dart';
-import 'package:myhospitalapp/registration_user.dart';
+import 'package:myhospitalapp/registration_doctor.dart';
+import 'package:myhospitalapp/registration_patient.dart';
 
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  static const String _title = 'Helping Hand ';
+  static const String _title = 'My Hospital';
 
   @override
   Widget build(BuildContext context) {
@@ -36,8 +37,8 @@ class MyStatefulWidget extends StatefulWidget {
 }
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  String dropdownvalue = 'User';
-  var items = ['User', 'Worker'];
+  String dropdownvalue = 'Doctor';
+  var items = ['Doctor', 'Patient','Nurse','Wardboy','Manager','Staff'];
   TextEditingController name = TextEditingController();
   TextEditingController password = TextEditingController();
 
@@ -90,7 +91,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               alignment: Alignment.center,
               padding: const EdgeInsets.all(10),
               child: const Text(
-                'Find Helping Hand',
+                'My Hospital',
                 style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.w500,
@@ -172,7 +173,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             ),
             Row(
               children: <Widget>[
-                const Text('Looking for worker ?'),
+                const Text('Are you a Patient ?'),
                 TextButton(
                   child: const Text(
                     'Register',
@@ -192,7 +193,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             ),
             Row(
               children: <Widget>[
-                const Text('Are you looking for work?'),
+                const Text('Hospital Staff?'),
                 TextButton(
                   child: const Text(
                     'Register',
@@ -200,11 +201,11 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                   ),
                   onPressed: () {
                     //signup screen
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //       builder: (context) => const RegistrationPageWorker()),
-                    // );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const RegistrationDoctor()),
+                    );
                   },
                 )
               ],

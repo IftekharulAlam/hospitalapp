@@ -114,7 +114,7 @@ class _RegistrationPageUserState extends State<RegistrationPageUser> {
                 alignment: Alignment.center,
                 padding: const EdgeInsets.all(10),
                 child: const Text(
-                  'Search Maid',
+                  'My Hospital',
                   style: TextStyle(
                       color: Colors.blue,
                       fontWeight: FontWeight.w500,
@@ -124,7 +124,7 @@ class _RegistrationPageUserState extends State<RegistrationPageUser> {
                 alignment: Alignment.center,
                 padding: const EdgeInsets.all(10),
                 child: const Text(
-                  'HomeOwner Registration',
+                  'Patient Registration',
                   style: TextStyle(fontSize: 20),
                 )),
             Container(
@@ -148,6 +148,16 @@ class _RegistrationPageUserState extends State<RegistrationPageUser> {
               ),
             ),
             Container(
+              padding: const EdgeInsets.all(10),
+              child: TextField(
+                controller: phone,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Phone',
+                ),
+              ),
+            ),
+            Container(
               height: 50,
               padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
               child: ElevatedButton(
@@ -163,7 +173,7 @@ class _RegistrationPageUserState extends State<RegistrationPageUser> {
                 controller: phone,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
-                  labelText: 'Phone',
+                  labelText: 'Problem / Disease Name ',
                 ),
               ),
             ),
@@ -182,7 +192,7 @@ class _RegistrationPageUserState extends State<RegistrationPageUser> {
               height: 50,
               padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
               child: ElevatedButton(
-                child: const Text('Register as HomeOwner'),
+                child: const Text('Register as Patient'),
                 onPressed: () {
                   if (filepath != "" &&
                       name.text != "" &&
